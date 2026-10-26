@@ -1,20 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageIntro } from "@/components/SiteHeader";
 import { useLang } from "@/lib/i18n";
-import rebar from "@/assets/work/rebar-slab.jpg.asset.json";
-import steel from "@/assets/work/steel-frame.jpg.asset.json";
-import render from "@/assets/work/render.jpg.asset.json";
-import facade from "@/assets/work/facade.jpg.asset.json";
-import excavation from "@/assets/work/excavation.jpg.asset.json";
-import aerial from "@/assets/work/aerial-land.jpg.asset.json";
-import drone from "@/assets/work/drone.jpg.asset.json";
-import smallScale from "@/assets/work/small-scale.jpeg.asset.json";
-import legalization from "@/assets/work/legalization.jpeg.asset.json";
-import identity from "@/assets/work/building-identity.jpeg.asset.json";
-import shop from "@/assets/work/health-shop.jpeg.asset.json";
-import silos from "@/assets/work/industrial-silos.jpeg.asset.json";
-import industrialRoof from "@/assets/work/industrial-roof.jpeg.asset.json";
-
+const rebar = { url: "/images/work/rebar-slab.jpg" };
+const steel = { url: "/images/work/steel-frame.jpg" };
+const render = { url: "/images/work/render.jpg" };
+const facade = { url: "/images/work/facade.jpg" };
+const excavation = { url: "/images/work/excavation.jpg" };
+const aerial = { url: "/images/work/aerial-land.jpg" };
+const drone = { url: "/images/work/drone.jpg" };
+const smallScale = { url: "/images/work/small-scale.jpeg" };
+const legalization = { url: "/images/work/legalization.jpeg" };
+const identity = { url: "/images/work/building-identity.jpeg" };
+const shop = { url: "/images/work/health-shop.jpeg" };
+const silos = { url: "/images/work/industrial-silos.jpeg" };
+const industrialRoof = { url: "/images/work/industrial-roof.jpeg" };
 // index matches t.services.items order
 const photos: Record<number, { url: string }[]> = {
   0: [rebar, steel],

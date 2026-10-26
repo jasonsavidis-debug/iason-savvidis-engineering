@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import office from "@/assets/work/office.jpeg.asset.json";
+const office = { url: "/images/work/office.jpeg" };
 import { PageIntro } from "@/components/SiteHeader";
 import { useLang } from "@/lib/i18n";
 

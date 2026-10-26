@@ -1,18 +1,17 @@
 import { ArrowUpRight } from "lucide-react";
 import { useLang } from "@/lib/i18n";
-import i1 from "@/assets/ig/ig-1.jpg.asset.json";
-import i2 from "@/assets/ig/ig-2.jpg.asset.json";
-import i3 from "@/assets/ig/ig-3.jpg.asset.json";
-import i4 from "@/assets/ig/ig-4.jpg.asset.json";
-import i5 from "@/assets/ig/ig-5.jpg.asset.json";
-import i6 from "@/assets/ig/ig-6.jpg.asset.json";
-import i7 from "@/assets/ig/ig-7.jpg.asset.json";
-import i8 from "@/assets/ig/ig-8.jpg.asset.json";
-import i9 from "@/assets/ig/ig-9.jpg.asset.json";
-import i10 from "@/assets/ig/ig-10.jpg.asset.json";
-import i11 from "@/assets/ig/ig-11.jpg.asset.json";
-import i12 from "@/assets/ig/ig-12.jpg.asset.json";
-
+const i1 = { url: "/images/ig/ig-1.jpg" };
+const i2 = { url: "/images/ig/ig-2.jpg" };
+const i3 = { url: "/images/ig/ig-3.jpg" };
+const i4 = { url: "/images/ig/ig-4.jpg" };
+const i5 = { url: "/images/ig/ig-5.jpg" };
+const i6 = { url: "/images/ig/ig-6.jpg" };
+const i7 = { url: "/images/ig/ig-7.jpg" };
+const i8 = { url: "/images/ig/ig-8.jpg" };
+const i9 = { url: "/images/ig/ig-9.jpg" };
+const i10 = { url: "/images/ig/ig-10.jpg" };
+const i11 = { url: "/images/ig/ig-11.jpg" };
+const i12 = { url: "/images/ig/ig-12.jpg" };
 const IG = "https://www.instagram.com/engineer.savvidis/";
 const posts = [
   [i1, "reel/DbNaQZ-oL7U"], [i5, "p/DXHvJwviDPF"], [i12, "p/DU23pOwCBAa"], [i6, "reel/DWBr3-7iCcu"],

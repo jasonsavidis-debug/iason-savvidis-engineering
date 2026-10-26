@@ -1,8 +1,8 @@
 import { InstagramGallery } from "@/components/InstagramGallery";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
-import hero from "@/assets/work/facade.jpg.asset.json";
-import second from "@/assets/work/rebar-slab.jpg.asset.json";
+const hero = { url: "/images/work/facade.jpg" };
+const second = { url: "/images/work/rebar-slab.jpg" };
 import logo from "@/assets/logo-light.png";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/lib/i18n";
