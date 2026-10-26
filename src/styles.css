@@ -1,0 +1,127 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Space Grotesk", ui-sans-serif, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 2px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-glow: var(--glow);
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.17 0 0);
+  --foreground: oklch(0.96 0.005 250);
+  --card: oklch(0.21 0 0);
+  --card-foreground: oklch(0.96 0.005 250);
+  --popover: oklch(0.21 0 0);
+  --popover-foreground: oklch(0.96 0.005 250);
+  --primary: oklch(0.97 0 0);
+  --primary-foreground: oklch(0.17 0 0);
+  --secondary: oklch(0.24 0 0);
+  --secondary-foreground: oklch(0.96 0.005 250);
+  --muted: oklch(0.24 0 0);
+  --muted-foreground: oklch(0.7 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.17 0 0);
+  --destructive: oklch(0.65 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.97 0 0);
+  --glow: oklch(1 0 0 / 20%);
+  --cursor-fill: oklch(0.94 0 0 / 24%);
+  --cursor-border: oklch(1 0 0 / 18%);
+  --gradient-fade: linear-gradient(180deg, oklch(0.17 0 0 / 0) 0%, oklch(0.17 0 0 / 0.75) 60%, oklch(0.17 0 0) 100%);
+}
+
+.circle-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--cursor-fill);
+  border: 1px solid var(--cursor-border);
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0;
+  will-change: transform;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .circle-cursor.is-visible { opacity: 1; }
+  .circle-cursor-active, .circle-cursor-active * { cursor: none !important; }
+  .circle-cursor-active input, .circle-cursor-active textarea,
+  .circle-cursor-active [contenteditable="true"] { cursor: text !important; }
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: 0.01em; text-transform: uppercase; font-weight: 400 !important; }
+  img.mono { filter: grayscale(1) contrast(1.05); transition: filter .6s; }
+  .group:hover img.mono, img.mono:hover { filter: grayscale(0); }
+}
+
+@utility grid-lines {
+  background-image:
+    linear-gradient(to right, oklch(1 0 0 / 4%) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(1 0 0 / 4%) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@utility hero-fade {
+  background: var(--gradient-fade);
+}
+
+@utility glow-text {
+  text-shadow: 0 0 24px var(--glow);
+}
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@utility animate-rise {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
